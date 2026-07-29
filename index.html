@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ivory Grace L. Libreno, RM, BSM — Registered Midwife</title>
+<!-- portrait: ivory-portrait.jpg must sit alongside this file -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+:root{
+  --teal-deep:#1B4B43;
+  --teal-ink:#12332D;
+  --cream:#FAF6EF;
+  --sage:#E7EBE2;
+  --coral:#E2876C;
+  --gold:#C6A059;
+  --ink:#1B211F;
+  --paper:#FFFFFF;
+  --line:#D9D5C7;
+}
+
+*{box-sizing:border-box; margin:0; padding:0;}
+
+html{scroll-behavior:smooth;}
+
+body{
+  background:var(--cream);
+  color:var(--ink);
+  font-family:'Inter', sans-serif;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+.eyebrow{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:.72rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--teal-deep);
+  opacity:.75;
+}
+
+h1,h2,h3{
+  font-family:'Fraunces', serif;
+  font-weight:600;
+  color:var(--teal-ink);
+  letter-spacing:-.01em;
+}
+
+a{color:inherit;}
+
+/* ================= NAV ================= */
+nav{
+  position:sticky; top:0; z-index:50;
+  background:rgba(250,246,239,.88);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+  padding:16px 6vw;
+  display:flex; justify-content:space-between; align-items:center;
+}
+.nav-name{
+  font-family:'Fraunces', serif;
+  font-weight:600;
+  font-size:1.05rem;
+  color:var(--teal-ink);
+}
+.nav-links{
+  display:flex; gap:28px; list-style:none;
+  font-family:'IBM Plex Mono', monospace;
+  font-size:.75rem;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+.nav-links a{
+  text-decoration:none;
+  padding-bottom:3px;
+  border-bottom:1px solid transparent;
+  transition:border-color .25s;
+}
+.nav-links a:hover, .nav-links a:focus-visible{border-color:var(--coral);}
+@media (max-width:700px){ .nav-links{display:none;} }
+
+/* ================= HERO ================= */
+.hero{
+  position:relative;
+  padding:9vh 6vw 6vh;
+  overflow:hidden;
+  background:linear-gradient(180deg, var(--cream) 0%, var(--sage) 100%);
+}
+.hero-inner{max-width:1100px; margin:0 auto; position:relative; z-index:2;}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:56px;
+  align-items:center;
+}
+@media (max-width:800px){
+  .hero-grid{grid-template-columns:1fr; }
+  .hero-portrait{order:-1; max-width:280px; margin:0 auto;}
+}
+.hero .eyebrow{margin-bottom:18px;}
+.hero h1{
+  font-size:clamp(2.1rem, 4.6vw, 3.4rem);
+  line-height:1.05;
+  max-width:14ch;
+}
+.hero-portrait{
+  position:relative;
+}
+.hero-portrait .frame{
+  position:relative;
+  border-radius:6px;
+  overflow:hidden;
+  aspect-ratio:4/5;
+  background:var(--teal-deep);
+  box-shadow:0 22px 46px -18px rgba(18,51,45,.35);
+}
+.hero-portrait img{
+  width:100%; height:100%;
+  object-fit:cover;
+  display:block;
+  filter:saturate(.96) contrast(1.02);
+}
+.hero-portrait .tag{
+  position:absolute;
+  left:-1px; bottom:18px;
+  background:var(--teal-deep);
+  color:var(--cream);
+  font-family:'IBM Plex Mono', monospace;
+  font-size:.68rem;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  padding:9px 16px;
+  border-radius:0 3px 3px 0;
+}
+.hero .role{
+  margin-top:14px;
+  font-size:clamp(1rem,2vw,1.25rem);
+  color:var(--teal-deep);
+  font-weight:500;
+}
+.hero .lede{
+  margin-top:26px;
+  max-width:56ch;
+  font-size:1.05rem;
+  color:#3A423F;
+}
+.hero-meta{
+  margin-top:38px;
+  display:flex; flex-wrap:wrap; gap:10px;
+}
+.pill{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:.72rem;
+  letter-spacing:.04em;
+  padding:7px 14px;
+  border:1px solid var(--teal-deep);
+  border-radius:999px;
+  color:var(--teal-deep);
+  background:rgba(255,255,255,.5);
+}
+
+/* Credential stat bar — the signature element */
+.stat-bar{
+  margin-top:56px;
+  border-top:1px solid var(--line);
+  padding-top:28px;
+  display:grid;
+  grid-template-columns:repeat(4, auto);
+  gap:36px;
+}
+@media (max-width:800px){
+  .stat-bar{grid-template-columns:repeat(2, 1fr); row-gap:26px;}
+}
+.stat-bar .stat .num{
+  font-family:'Fraunces', serif;
+  font-weight:600;
+  font-size:2rem;
+  color:var(--teal-ink);
+  line-height:1;
+}
+.stat-bar .stat .num .unit{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:.85rem;
+  color:var(--coral);
+  font-weight:400;
+  margin-left:2px;
+}
+.stat-bar .stat .label{
+  margin-top:8px;
+  font-family:'IBM Plex Mono', monospace;
+  font-size:.68rem;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:#6B746F;
+}
+
+/* ================= SECTION SHELL ================= */
+section{padding:9vh 6vw;}
+.section-inner{max-width:980px; margin:0 auto;}
+.section-head{
+  display:flex; align-items:baseline; gap:18px;
+  margin-bottom:44px;
+}
+.section-head .num{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:.75rem;
+  color:var(--gold);
+}
+.section-head h2{font-size:clamp(1.5rem,3vw,2.1rem);}
+.section-head::after{
+  content:"";
+  flex:1;
+  height:1px;
+  background:var(--line);
+}
+
+/* ================= SUMMARY ================= */
+.summary-text{
+  max-width:70ch;
+  font-size:1.08rem;
+  color:#2E3532;
+}
+.summary-text strong{color:var(--teal-ink); font-weight:600;}
+
+/* ================= EXPERIENCE (chart timeline) ================= */
+.exp-item{
+  display:grid;
+  grid-template-columns:150px 1px 1fr;
+  gap:0 32px;
+  padding-bottom:56px;
+  position:relative;
+}
+.exp-item:last-child{padding-bottom:0;}
+.exp-dates{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:.78rem;
+  color:var(--teal-deep);
+  padding-top:4px;
+}
+.exp-rail{
+  background:var(--line);
+  position:relative;
+}
+.exp-rail::before{
+  content:"";
+  position:absolute;
+  top:6px; left:50%;
+  width:9px; height:9px;
+  transform:translateX(-50%);
+  background:var(--coral);
+  border-radius:50%;
+  box-shadow:0 0 0 4px var(--cream);
+}
+.exp-role{font-size:1.25rem; margin-bottom:2px;}
+.exp-place{
+  font-style:italic;
+  color:#5B655F;
+  font-size:.95rem;
+  margin-bottom:16px;
+}
+.exp-list{list-style:none;}
+.exp-list li{
+  position:relative;
+  padding-left:20px;
+  margin-bottom:9px;
+  color:#333A37;
+  font-size:.97rem;
+}
+.exp-list li::before{
+  content:"—";
+  position:absolute; left:0; top:0;
+  color:var(--gold);
+}
+@media (max-width:640px){
+  .exp-item{grid-template-columns:20px 1fr; }
+  .exp-dates{grid-column:1 / -1; padding-top:0; margin-bottom:10px;}
+  .exp-rail{grid-row:2 / span 1;}
+}
+
+/* ================= CLINICAL AREAS ================= */
+.ward-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(170px,1fr));
+  gap:14px;
+}
+.ward-card{
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:4px;
+  padding:20px 18px;
+  transition:border-color .25s, transform .25s;
+}
+.ward-card:hover{border-color:var(--coral); transform:translateY(-3px);}
+.ward-card .idx{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:.68rem;
+  color:var(--gold);
+  display:block;
+  margin-bottom:10px;
+}
+.ward-card .name{font-family:'Fraunces', serif; font-weight:600; font-size:1.02rem; color:var(--teal-ink);}
+
+/* ================= SKILLS + COMPETENCIES ================= */
+.two-col{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+}
+@media (max-width:700px){ .two-col{grid-template-columns:1fr;} }
+.tag-cloud{display:flex; flex-wrap:wrap; gap:10px;}
+.tag{
+  font-size:.86rem;
+  padding:8px 14px;
+  background:var(--sage);
+  border-radius:3px;
+  color:var(--teal-ink);
+}
+.comp-list{list-style:none;}
+.comp-list li{
+  padding:11px 0;
+  border-bottom:1px solid var(--line);
+  font-size:.95rem;
+  display:flex; justify-content:space-between; align-items:center;
+}
+.comp-list li:last-child{border-bottom:none;}
+.comp-list .mark{color:var(--coral); font-family:'IBM Plex Mono', monospace; font-size:.75rem;}
+
+/* ================= CREDENTIALS (badge style) ================= */
+.credentials{
+  background:var(--teal-deep);
+  color:var(--cream);
+  border-radius:6px;
+  padding:44px 6vw;
+}
+.credentials .section-head::after{background:rgba(250,246,239,.25);}
+.credentials .section-head h2{color:var(--cream);}
+.credentials .section-head .num{color:var(--coral);}
+.cred-grid{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:48px;
+}
+@media (max-width:700px){ .cred-grid{grid-template-columns:1fr;} }
+.license-card{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:6px;
+  padding:26px 26px;
+}
+.license-card .l-eyebrow{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:.68rem;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--coral);
+  margin-bottom:10px;
+}
+.license-card .l-name{font-family:'Fraunces', serif; font-size:1.3rem; font-weight:600; margin-bottom:4px;}
+.license-card .l-meta{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:.8rem;
+  color:rgba(250,246,239,.75);
+  display:flex; justify-content:space-between;
+  margin-top:16px;
+  border-top:1px dashed rgba(255,255,255,.25);
+  padding-top:14px;
+}
+.cert-list{list-style:none; margin-top:18px;}
+.cert-list li{
+  padding:12px 0;
+  border-bottom:1px solid rgba(255,255,255,.14);
+  font-size:.95rem;
+  display:flex; align-items:center; gap:12px;
+}
+.cert-list li::before{
+  content:"";
+  width:6px; height:6px;
+  border-radius:50%;
+  background:var(--coral);
+  flex-shrink:0;
+}
+.edu-block{margin-top:28px;}
+.edu-item{margin-bottom:16px;}
+.edu-item .degree{font-family:'Fraunces', serif; font-size:1.05rem; font-weight:600;}
+.edu-item .school{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:.78rem;
+  color:rgba(250,246,239,.7);
+  margin-top:3px;
+}
+
+/* ================= AFFILIATIONS ================= */
+.affil-row{
+  display:flex; align-items:center; gap:20px;
+  padding:20px 0;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.affil-mark{
+  font-family:'Fraunces', serif;
+  font-size:1.6rem;
+  color:var(--teal-deep);
+}
+.affil-text .t1{font-weight:600; font-size:1.02rem;}
+.affil-text .t2{font-size:.85rem; color:#5B655F; margin-top:2px;}
+
+/* ================= COMMUNITY / MEDICAL MISSIONS GALLERY ================= */
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:18px;
+}
+@media (max-width:700px){ .gallery-grid{grid-template-columns:1fr;} }
+.gallery-card{
+  position:relative;
+  border-radius:5px;
+  overflow:hidden;
+  background:var(--teal-deep);
+  aspect-ratio:4/3;
+  box-shadow:0 14px 30px -16px rgba(18,51,45,.3);
+}
+.gallery-card img{
+  width:100%; height:100%;
+  object-fit:cover;
+  display:block;
+  transition:transform .5s ease;
+}
+.gallery-card:hover img{transform:scale(1.04);}
+.gallery-caption{
+  position:absolute; left:0; right:0; bottom:0;
+  padding:16px 18px 14px;
+  background:linear-gradient(0deg, rgba(18,51,45,.92) 0%, rgba(18,51,45,.55) 60%, rgba(18,51,45,0) 100%);
+  color:var(--cream);
+}
+.gallery-caption .g-title{
+  font-family:'Fraunces', serif;
+  font-weight:600;
+  font-size:1rem;
+  line-height:1.2;
+}
+.gallery-caption .g-meta{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:.68rem;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+  color:rgba(250,246,239,.75);
+  margin-top:5px;
+}
+.gallery-intro{
+  max-width:66ch;
+  color:#2E3532;
+  margin-bottom:36px;
+  font-size:1.02rem;
+}
+
+/* ================= FOOTER / CONTACT ================= */
+footer{
+  padding:9vh 6vw 6vh;
+  background:var(--sage);
+}
+.footer-inner{max-width:980px; margin:0 auto;}
+footer h2{font-size:clamp(1.7rem,4vw,2.6rem); max-width:16ch;}
+.contact-grid{
+  margin-top:42px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:24px;
+}
+.contact-item .eyebrow{margin-bottom:8px;}
+.contact-item .val{
+  font-family:'Fraunces', serif;
+  font-size:1.15rem;
+  color:var(--teal-ink);
+}
+.contact-item a.val{text-decoration:none; border-bottom:1px solid var(--coral);}
+.foot-note{
+  margin-top:60px;
+  font-family:'IBM Plex Mono', monospace;
+  font-size:.72rem;
+  color:#7C8580;
+  display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-name">Ivory Grace Libreno</div>
+  <ul class="nav-links">
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#clinical-areas">Clinical Areas</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#credentials">Credentials</a></li>
+    <li><a href="#community">Community</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <h1>Ivory Grace L. Libreno, RM, BSM</h1>
+        <div class="role">Registered Midwife &amp; Student Nurse — Cagayan de Oro, Philippines</div>
+        <p class="lede">Dedicated Registered Midwife with more than eight years of experience providing prenatal, labor, delivery, postpartum, emergency, pediatric, and medical-surgical care. Passionate about patient education, teamwork, and continuous professional growth while currently pursuing a Bachelor of Science in Nursing.</p>
+        <div class="hero-meta">
+          <span class="pill">Registered Midwife · License No. 0173671</span>
+          <span class="pill">8+ yrs clinical practice</span>
+          <span class="pill">IMAP Member</span>
+          <span class="pill">Currently pursuing BSN</span>
+        </div>
+
+        <div class="stat-bar">
+          <div class="stat">
+            <div class="num">8<span class="unit">yrs+</span></div>
+            <div class="label">Clinical Practice</div>
+          </div>
+          <div class="stat">
+            <div class="num">2</div>
+            <div class="label">Facilities Served</div>
+          </div>
+          <div class="stat">
+            <div class="num">6</div>
+            <div class="label">Clinical Wards</div>
+          </div>
+          <div class="stat">
+            <div class="num">3</div>
+            <div class="label">Certifications</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-portrait">
+        <div class="frame">
+          <img src="ivory-portrait.jpg" alt="Ivory Grace L. Libreno, RM, BSM, in her nursing uniform">
+        </div>
+        <span class="tag">Cagayan de Oro College</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="summary">
+  <div class="section-inner">
+    <div class="section-head"><span class="num">01</span><h2>Professional Summary</h2></div>
+    <p class="summary-text">
+      <strong>Dedicated and compassionate</strong>, with a track record of accurate assessments and evidence-based interventions across fast-paced clinical settings. Comfortable managing high-acuity situations, mentoring junior staff, and collaborating closely with OB/GYNs and pediatricians to keep escalation of care safe and timely. Presently expanding that foundation through a Bachelor of Science in Nursing, with the aim of bringing both midwifery expertise and nursing leadership to future roles.
+    </p>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="section-inner">
+    <div class="section-head"><span class="num">02</span><h2>Clinical Experience</h2></div>
+
+    <div class="exp-item">
+      <div class="exp-dates">Jun 2017 —<br>Sep 2025</div>
+      <div class="exp-rail"></div>
+      <div>
+        <div class="exp-role">Registered Midwife / Nursing Attendant</div>
+        <div class="exp-place">Misamis Oriental Provincial Hospital — Balingasag, Misamis Oriental</div>
+        <ul class="exp-list">
+          <li>Managed low-risk pregnancies, providing comprehensive prenatal, labor, delivery, and postpartum care</li>
+          <li>Attended Normal Spontaneous Deliveries and C-Section Deliveries</li>
+          <li>Assisted in minor surgeries and regular nursing attendant clinical routines</li>
+          <li>Performed well-woman exams, family planning counseling, and newborn assessments to facility standards</li>
+          <li>Collaborated closely with OB/GYNs, pediatricians, and nursing staff to ensure safe, timely escalation of care</li>
+          <li>Educated patients and families on childbirth preparation, breastfeeding, and postpartum recovery</li>
+          <li>Precepted and mentored student midwives and on-boarding nurses in clinical rotations</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-dates">May 2016 —<br>Jun 2016</div>
+      <div class="exp-rail"></div>
+      <div>
+        <div class="exp-role">Midwife</div>
+        <div class="exp-place">Violeta Lying-in — Aglayan, Malaybalay City</div>
+        <ul class="exp-list">
+          <li>Managed low-risk pregnancies, providing comprehensive prenatal, labor, delivery, and postpartum care</li>
+          <li>Attended Normal Spontaneous Deliveries</li>
+          <li>Performed well-woman exams, family planning counseling, and newborn assessments to facility standards</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="clinical-areas">
+  <div class="section-inner">
+    <div class="section-head"><span class="num">03</span><h2>Clinical Areas</h2></div>
+    <div class="ward-grid">
+      <div class="ward-card"><span class="idx">Ward</span><span class="name">OB/GYNE Ward</span></div>
+      <div class="ward-card"><span class="idx">Ward</span><span class="name">Medical Surgical Ward</span></div>
+      <div class="ward-card"><span class="idx">Ward</span><span class="name">Pediatric Ward</span></div>
+      <div class="ward-card"><span class="idx">Ward</span><span class="name">Emergency Room</span></div>
+      <div class="ward-card"><span class="idx">Ward</span><span class="name">Operating Room / Delivery Room Complex</span></div>
+      <div class="ward-card"><span class="idx">Ward</span><span class="name">Isolation / Reverse Isolation</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="section-inner">
+    <div class="section-head"><span class="num">04</span><h2>Skills &amp; Competencies</h2></div>
+    <div class="two-col">
+      <div>
+        <div class="eyebrow" style="margin-bottom:16px;">Core Skills</div>
+        <div class="tag-cloud">
+          <span class="tag">Patient Assessment &amp; Triage</span>
+          <span class="tag">IV Therapy &amp; Medication Admin.</span>
+          <span class="tag">Care Plan Development</span>
+          <span class="tag">Patient &amp; Family Education</span>
+          <span class="tag">Crisis &amp; Emergency Response</span>
+          <span class="tag">Maternal Delivery</span>
+          <span class="tag">Mentorship &amp; Staff On-boarding</span>
+        </div>
+      </div>
+      <div>
+        <div class="eyebrow" style="margin-bottom:16px;">Key Competencies</div>
+        <ul class="comp-list">
+          <li>Patient-Centered Care <span class="mark">01</span></li>
+          <li>Keen to Details <span class="mark">02</span></li>
+          <li>Critical Thinking <span class="mark">03</span></li>
+          <li>Adaptability <span class="mark">04</span></li>
+          <li>Problem Solving <span class="mark">05</span></li>
+          <li>Effective Collaboration <span class="mark">06</span></li>
+          <li>Time Management <span class="mark">07</span></li>
+          <li>Level-Headed <span class="mark">08</span></li>
+          <li>Keen Attention to Body Language <span class="mark">09</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="credentials">
+  <div class="section-inner credentials">
+    <div class="section-head"><span class="num">05</span><h2>Licensure, Certifications &amp; Education</h2></div>
+    <div class="cred-grid">
+      <div>
+        <div class="license-card">
+          <div class="l-eyebrow">Primary Licensure</div>
+          <div class="l-name">Registered Midwife</div>
+          <div style="font-family:'IBM Plex Mono', monospace; font-size:.85rem; color:rgba(250,246,239,.75);">Philippines</div>
+          <div class="l-meta">
+            <span>License No. 0173671</span>
+            <span>Exp. 05/2027</span>
+          </div>
+        </div>
+        <ul class="cert-list">
+          <li>Basic Life Support (BLS)</li>
+          <li>Advanced Cardiac Life Support (ACLS)</li>
+          <li>Essential Intrapartum Newborn Care (EINC)</li>
+        </ul>
+      </div>
+      <div>
+        <div class="eyebrow" style="color:rgba(250,246,239,.6);">Education</div>
+        <div class="edu-block">
+          <div class="edu-item">
+            <div class="degree">Bachelor of Science in Nursing (BSN)</div>
+            <div class="school">Cagayan de Oro College — In Progress</div>
+          </div>
+          <div class="edu-item">
+            <div class="degree">Bachelor of Science in Midwifery</div>
+            <div class="school">Tagoloan Community College — 2020</div>
+          </div>
+        </div>
+        <div class="eyebrow" style="color:rgba(250,246,239,.6); margin-top:28px;">Languages</div>
+        <div style="margin-top:10px; font-family:'Fraunces', serif; font-size:1.05rem;">English — Fluent</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="affiliations">
+  <div class="section-inner">
+    <div class="section-head"><span class="num">06</span><h2>Professional Affiliations</h2></div>
+    <div class="affil-row">
+      <div class="affil-mark">IMAP</div>
+      <div class="affil-text">
+        <div class="t1">Member, Integrated Midwives Association of the Philippines, Inc.</div>
+        <div class="t2">National professional organization for licensed midwives in the Philippines</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="community">
+  <div class="section-inner">
+    <div class="section-head"><span class="num">07</span><h2>Community Engagement &amp; Medical Missions</h2></div>
+    <p class="gallery-intro">Volunteer work alongside the Macajalar Masonic Lodge No. 184 and the Misamis Oriental Provincial Hospital–Balingasag medical team, bringing free circumcision and outreach clinics to barangays across Misamis Oriental and Bukidnon.</p>
+    <div class="gallery-grid">
+      <div class="gallery-card">
+        <img src="mission-01.jpg" alt="Medical mission volunteer team group photo at Operation Double Head outreach">
+        <div class="gallery-caption">
+          <div class="g-title">Operation Double Head</div>
+          <div class="g-meta">Talakag Covered Court, Talakag, Bukidnon · Jun 2025</div>
+        </div>
+      </div>
+      <div class="gallery-card">
+        <img src="mission-02.jpg" alt="Medical team preparing sterile supplies at outreach clinic station">
+        <div class="gallery-caption">
+          <div class="g-title">Clinic Station Set-Up</div>
+          <div class="g-meta">Sterile supplies &amp; instrument prep</div>
+        </div>
+      </div>
+      <div class="gallery-card">
+        <img src="mission-03.jpg" alt="Medical mission volunteer team group photo at Operation Tuli 2025 outreach">
+        <div class="gallery-caption">
+          <div class="g-title">Operation Tuli 2025</div>
+          <div class="g-meta">Solana Elementary, Jasaan, Misamis Oriental · May 2025</div>
+        </div>
+      </div>
+      <div class="gallery-card">
+        <img src="mission-04.jpg" alt="Medical mission team assisting with a minor outpatient procedure at outreach clinic">
+        <div class="gallery-caption">
+          <div class="g-title">Outreach Procedure Support</div>
+          <div class="g-meta">Chairside assistance &amp; patient care</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="footer-inner">
+    <div class="eyebrow" style="margin-bottom:14px;">Get in Touch</div>
+    <h2>Available for midwifery, nursing attendant, and maternal-newborn care roles.</h2>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <div class="eyebrow">Location</div>
+        <div class="val">Pagatpat, Cagayan de Oro City</div>
+      </div>
+      <div class="contact-item">
+        <div class="eyebrow">Phone</div>
+        <a class="val" href="tel:09983027692">0998-302-7692</a>
+      </div>
+      <div class="contact-item">
+        <div class="eyebrow">Email</div>
+        <a class="val" href="mailto:ivorygrace11.ig@gmail.com">ivorygrace11.ig@gmail.com</a>
+      </div>
+    </div>
+    <div class="foot-note">
+      <span>Ivory Grace L. Libreno, RM, BSM</span>
+      <span>License No. 0173671 · Exp. 05/2027</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
